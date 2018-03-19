@@ -67,17 +67,20 @@ public class LoginActivity extends AppCompatActivity {
         realm.beginTransaction();
 
         Login res = realm.where(Login.class).equalTo("email", email.getText().toString()).findFirst();
-
-        if(res.getEmail().equals(email.getText().toString())){
-            if(res.getSenha().equals(senha.getText().toString())){
-                Toast.makeText(this, "Usuário " + email.getText().toString() + " Logado!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }else{
-                Toast.makeText(this, "Usuário " + email.getText().toString() + " não cadastrado!", Toast.LENGTH_LONG).show();
+        try {
+            if (res.getEmail().equals(email.getText().toString())) {
+                if (res.getSenha().equals(senha.getText().toString())) {
+                    Toast.makeText(this, "Usuário " + email.getText().toString() + " Logado!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
+        } catch (Exception e){
+            Toast.makeText(this, "Usuário " + email.getText().toString() + " não logado!", Toast.LENGTH_LONG).show();
+        } finally {
+            this.finish();
         }
-        this.finish();
+
     }
 }
 
