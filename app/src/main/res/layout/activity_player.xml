@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.edu.iff.pooa20172.projeto_final.Player">
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="385dp" />
+
+    <Button
+        android:id="@+id/pausa"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/seekBar2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/pause"
+        android:layout_margin="6dp"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pausa"
+        android:layout_alignBottom="@+id/pausa"
+        android:layout_toStartOf="@+id/pausa"
+        android:layout_margin="6dp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/adiantar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pausa"
+        android:layout_alignBottom="@+id/pausa"
+        android:layout_toEndOf="@+id/pausa"
+        android:layout_margin="6dp"
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/proxima"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pausa"
+        android:layout_alignBottom="@+id/pausa"
+        android:layout_toEndOf="@+id/adiantar"
+        android:layout_margin="6dp"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/anterior"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/pausa"
+        android:layout_alignBottom="@+id/pausa"
+        android:layout_toStartOf="@+id/voltar"
+        android:layout_margin="6dp"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:paddingRight="16dp"
+        app:srcCompat="@drawable/music"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+</RelativeLayout>
+
