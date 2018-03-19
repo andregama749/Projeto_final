@@ -52,13 +52,13 @@ public class LoginActivity extends AppCompatActivity {
         l.setEmail(email.getText().toString());
         l.setSenha(senha.getText().toString());
 
-        realm.copyToRealm(l);
-        realm.commitTransaction();
-        realm.close();
+            realm.copyToRealm(l);
+            realm.commitTransaction();
+            realm.close();
 
-        Toast.makeText(this, "Usuário " + email.getText().toString() + " Cadastrado!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
+            Toast.makeText(this, "Usuário " + email.getText().toString() + " Cadastrado!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
         this.finish();
     }
 
@@ -69,11 +69,14 @@ public class LoginActivity extends AppCompatActivity {
         Login res = realm.where(Login.class).equalTo("email", email.getText().toString()).findFirst();
 
         if(res.getEmail().equals(email.getText().toString())){
-            Toast.makeText(this, "Usuário " + email.getText().toString() + " Logado!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            if(res.getSenha().equals(senha.getText().toString())){
+                Toast.makeText(this, "Usuário " + email.getText().toString() + " Logado!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Usuário " + email.getText().toString() + " não cadastrado!", Toast.LENGTH_LONG).show();
+            }
         }
-        Toast.makeText(this, "Usuário " + email.getText().toString() + " não cadastrado!", Toast.LENGTH_LONG).show();
         this.finish();
     }
 }
